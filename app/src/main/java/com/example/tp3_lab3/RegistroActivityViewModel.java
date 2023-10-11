@@ -88,14 +88,13 @@ public class RegistroActivityViewModel extends AndroidViewModel {
         if (usuario.getAvatar() == "") {
             Bitmap bitmap = BitmapFactory.decodeResource(getApplication().getResources(), R.drawable.ffa09aec412db3f54deadf1b3781de2a);
             File archivo = new File(getApplication().getApplicationContext().getFilesDir(), nombreArchivo);
-            Log.d("salida", "AVATARREGISTRADO: " + archivo.getAbsolutePath());
+            Log.d("salida", "RegisteredAvatar: " + archivo.getAbsolutePath());
             if (archivo.exists()) {
                 archivo.delete();
             }
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
 
-            // Rutina para convertir a un arreglo de byte los datos de la imagen
             byte[] b = baos.toByteArray();
             usuario.setAvatar(archivo.getAbsolutePath());
             try {
@@ -154,7 +153,7 @@ public class RegistroActivityViewModel extends AndroidViewModel {
 
                         @Override
                         public void onLoadCleared(@Nullable Drawable placeholder) {
-                            // Implementa este método si es necesario
+
                         }
                     });
         }
@@ -171,8 +170,7 @@ public class RegistroActivityViewModel extends AndroidViewModel {
     }
 
     public void respuetaDeCamara(int requestCode, int resultCode, @Nullable Intent data, int REQUEST_IMAGE_CAPTURE) {
-        Log.d("salida", requestCode + "");
-        Log.d("salida", "ENTROOOOO");
+
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");

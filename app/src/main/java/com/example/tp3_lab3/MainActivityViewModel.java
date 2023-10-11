@@ -32,10 +32,10 @@ public class MainActivityViewModel extends AndroidViewModel {
                 getApplication().startActivity(intent);
 
             } else {
-                Toast.makeText(getApplication(), "Usuario no encontrado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplication(), "User not found", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(getApplication(), "Debe completar los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplication(), "Complete the fields", Toast.LENGTH_SHORT).show();
         }
 
 
