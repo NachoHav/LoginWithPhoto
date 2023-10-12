@@ -44,7 +44,7 @@ public class RegistroActivity extends AppCompatActivity {
         vm.getmBtnTitulo().observe(this, new Observer<String>() {
             @Override
             public void onChanged(String s) {
-                binding.btnRegGua.setText(s);
+                binding.btActualizar.setText(s);
             }
         });
         vm.getmUsuario().observe(this,usuario -> {
@@ -80,7 +80,7 @@ public class RegistroActivity extends AppCompatActivity {
             }
         });
 
-        binding.btnRegGua.setOnClickListener(new View.OnClickListener() {
+        binding.btActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("salida","URL: "+vm.getmUsuario().getValue().getAvatar());
